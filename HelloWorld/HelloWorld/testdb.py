@@ -36,7 +36,7 @@ def testdb2(request):
 
     # 输出所有数据
     for var in list:
-        response1 += var.name + " "
+        response1 += var.name + " "+var.sex+" "+var.group+" "+var.idpassword+" "
         response = response1
     return HttpResponse("<p>" + response + "</p>")
 

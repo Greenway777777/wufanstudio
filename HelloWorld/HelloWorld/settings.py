@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #以上为django自带app，下面是自己定义的app
+    #以上为django自带自动管理工具app，下面是自己定义的app
     'TestModel'
 ]
 

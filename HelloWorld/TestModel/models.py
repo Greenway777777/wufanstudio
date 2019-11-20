@@ -7,6 +7,7 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
+#用户个人信息模型
 class TestmodelUserinfo(models.Model):
     name = models.CharField(max_length=20)
     sex = models.CharField(max_length=10)
@@ -17,3 +18,11 @@ class TestmodelUserinfo(models.Model):
     class Meta:
         managed = False
         db_table = 'testModel_userinfo'
+
+
+#书籍信息
+class TestmodelBookinfo(models.Model):
+    name=models.CharField(max_length=40)
+    author=models.CharField(max_length=20)
+    press=models.CharField(max_length=40)
+

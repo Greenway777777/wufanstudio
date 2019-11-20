@@ -23,8 +23,27 @@ urlpatterns = [
 from django.conf.urls import url
 from HelloWorld.view import hello
 from HelloWorld.testdb import testdb
+from HelloWorld.testdb import testdb2
+from HelloWorld.testdb import testdb3
+from HelloWorld.testdb import testdb4
+from HelloWorld import search
+from HelloWorld import search2
+from TestModel.views import login
+from TestModel.views import index
+from django.contrib import admin
+from django.urls import path
+
 
 urlpatterns = [
+        path('admin/', admin.site.urls),
         url('^hello/$', hello),
         url('^testdb/$', testdb),
+        url('^testdb2/$', testdb2),
+        url('^testdb3/$', testdb3),
+        url('^testdb4/$', testdb4),
+        url(r'^search/$', search.search),
+        url(r'^search-form/$', search.search_form),
+        url(r'^search-post/$', search2.search_post),
+        url(r'^login/$', login),
+        url(r'^index/$', index),
 ]
