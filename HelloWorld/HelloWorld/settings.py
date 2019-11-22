@@ -26,10 +26,10 @@ SECRET_KEY = '_b)j=upn8c6b*d4-jfn-x^-iv2wmq+1m^hqe-&wz6nilyoo@%2'
 
 #是否debug
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True   #False则调试时不会显示错误信息
 
 #允许访问的主机
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -129,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 #时区配置
-TIME_ZONE = 'UTC'#中国是Asia/Shanghai
+TIME_ZONE = 'Asia/Shanghai'#中国是Asia/Shanghai
 
 #字符集支持
 USE_I18N = True

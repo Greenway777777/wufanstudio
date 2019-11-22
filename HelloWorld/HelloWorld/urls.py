@@ -22,6 +22,7 @@ urlpatterns = [
 ]"""
 from django.conf.urls import url
 from HelloWorld.view import hello
+from HelloWorld.view import hello2
 from HelloWorld.testdb import testdb
 from HelloWorld.testdb import testdb2
 from HelloWorld.testdb import testdb3
@@ -37,6 +38,7 @@ from django.urls import path
 urlpatterns = [
         path('admin/', admin.site.urls),
         url('^hello/$', hello),
+        url('^hello/(\d{1,2})/$', hello2),
         url('^testdb/$', testdb),
         url('^testdb2/$', testdb2),
         url('^testdb3/$', testdb3),

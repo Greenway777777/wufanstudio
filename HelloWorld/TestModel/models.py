@@ -11,18 +11,33 @@ from django.db import models
 class TestmodelUserinfo(models.Model):
     name = models.CharField(max_length=20)
     sex = models.CharField(max_length=10)
-    age = models.IntegerField()
-    group = models.CharField(max_length=4)
-    idpassword = models.CharField(unique=True, max_length=19)
+    email = models.EmailField()
 
     class Meta:
-        managed = False
+        managed = True   #是否修改映射数据库表
         db_table = 'testModel_userinfo'
+
+#
+class TestmodelPressinfo(models.Model):
+    name = models.CharField(max_length=20)
+    address = models.CharField(max_length=50)
+    city = models.CharField(max_length=60)
+    province = models.CharField(max_length=30)
+    country = models.CharField(max_length=50)
+    website = models.URLField()
+
+    class Meta:
+        managed = True
+        db_table = 'testModel_pressinfo'
 
 
 #书籍信息
 class TestmodelBookinfo(models.Model):
     name=models.CharField(max_length=40)
-    author=models.CharField(max_length=20)
-    press=models.CharField(max_length=40)
+    author=models.ManyToManyField(TestmodelUserinfo)
+    press=models.ForeignKey(TestmodelPressinfo,on_delete=models.CASCADE,)
+    pub_date=models.DateField()
 
+    class Meta:
+        managed = True
+        db_table = 'testModel_bookinfo'
