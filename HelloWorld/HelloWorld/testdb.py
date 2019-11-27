@@ -6,7 +6,7 @@ from TestModel.models import TestmodelUserinfo
 
 # 数据库操作
 def testdb(request):
-  test1 = TestmodelUserinfo(name='tom', sex='male', age=21, group='2017', idpassword='440923199803145733')
+  test1 = TestmodelUserinfo(name='tom', sex='male', email='393799961')
   test1.save()
   return HttpResponse("<p>数据添加成功！</p>")
 
@@ -36,7 +36,7 @@ def testdb2(request):
 
     # 输出所有数据
     for var in list:
-        response1 += var.name + " "+var.sex+" "+var.group+" "+var.idpassword+" "
+        response1 += var.name + " "+var.sex+" "+var.email+" "
         response = response1
     return HttpResponse("<p>" + response + "</p>")
 
